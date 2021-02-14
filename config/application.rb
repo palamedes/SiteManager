@@ -11,6 +11,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+require 'apartment/elevators/subdomain' # or 'domain', 'first_subdomain', 'host'
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -19,7 +20,6 @@ Bundler.require(*Rails.groups)
 
 module SiteManager
   class Application < Rails::Application
-    config.middleware.use Apartment::Elevators::Subdomain
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
